@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị/Ẩn bảng bằng Checkbox</title>
+</head>
+<body>
+    <h2>Chọn checkbox để hiển thị/ẩn bảng</h2>
+
+    <label for="showTable">Hiển thị bảng:</label>
+    <input type="checkbox" id="showTable">
+
+    <table id="myTable" style="display: none;">
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+        </tr>
+    </table>
+
+    <script>
+        // Lấy tham chiếu đến checkbox và bảng
+        var checkbox = document.getElementById("showTable");
+        var table = document.getElementById("myTable");
+
+        // Thêm sự kiện "change" vào checkbox
+        checkbox.addEventListener("change", function () {
+            // Nếu checkbox được chọn, hiển thị bảng; nếu không, ẩn bảng
+            if (checkbox.checked) {
+                table.style.display = "table";
+            } else {
+                table.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
